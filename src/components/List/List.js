@@ -5,6 +5,7 @@ import { useState } from 'react';
 import shortid from 'shortid';
 import ColumnForm from '../ColumnForm/ColumnForm'
 
+
 const List = () =>{
     
     const [columns, setColumns] = useState([
@@ -36,17 +37,22 @@ const List = () =>{
             ]
         }
     ]);
-    // useEffect(() =>{
-
-    //     setTimeout(() =>{
-    //         setColumns([...columns, {id:4, title:'test column'}]);
-    //     }, 2000);
-    // }, []);
-
     const addColumn = newColumn => {
         setColumns([...columns, { id: shortid(), title: newColumn.title, icon: newColumn.icon, cards:[]}]);
     };
 
+    const addCard = (newCard, columnId)  =>{
+        const columnsUpdated = columns.map(column => {  {/* nie do końca rozumiem co tu sie dzieje */}
+        console.log(column)
+            if(column.id === columnId)
+                return{...column, cards: [column.cards, { id:shortid(), title: newCard.title}]}
+            else    
+                return column
+        })
+
+        setColumns(columnsUpdated)
+
+    };
 
     return(
         <div>
@@ -55,9 +61,10 @@ const List = () =>{
             </header>
             <p className={styles.description}>interesting thinghs i want to check out!</p>
             <section className={styles.columns}>
-                {columns.map(column => <Column key={column.id} title={column.title} icon={column.icon} cards={column.cards}/>)}
+                {columns.map(column => <Column key={column.id} title={column.title} icon={column.icon} />)}
+                
             </section>
-            <ColumnForm action={addColumn}/>
+            <ColumnForm action={addColumn}/> {/*Do wytłumaczenia*/}
         </div>
     )
 }
