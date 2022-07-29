@@ -3,19 +3,19 @@ import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
 import styles from './CardForm.module.scss';
 
-const CardForm = props =>{  {/*Nie rozumiem skadsie wzielo props albo bardziej po co jak itd*/}
-
+const CardForm = props =>{  
+    console.log(props)
     const [title, setTitle] =useState('');
 
     const handleSubmmit =e =>{
         e.preventDefault();
-        props.action({ title: title }, props.columnId); {/* ktory title wynika z czego juz sie zamotałem */}
+        props.action({ title: title }, props.columnId); 
         setTitle(' ')
     }
 
     return(
         <form className={styles.cardForm} onSubmit={handleSubmmit}>
-            <TextInput type="text" value= {title} onChange = {e=>setTitle(e.target.value)} /> {/*nie wiem skad bierze się te e */}
+            <TextInput type="text" value= {title} onChange = {e=>setTitle(e.target.value)} /> 
             <Button>Add Card</Button>
         </form>
     )
