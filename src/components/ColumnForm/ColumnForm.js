@@ -3,7 +3,7 @@ import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
 //import styles from './ColumnForm.module.scss'
 import { useDispatch } from 'react-redux';
-
+import { addColumn } from '../../redux/store';
 
 const ColumnForm = props =>{
 
@@ -14,7 +14,7 @@ const ColumnForm = props =>{
     
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch({type: 'ADD_COLUMN',newColumn: {title, icon}}); {/*czy moglem tutaj dodac short id zamiast w store */}
+        dispatch(addColumn({title, icon})); {/*czy moglem tutaj dodac short id zamiast w store */}
         setTitle('');
         setIcon('')
     }
