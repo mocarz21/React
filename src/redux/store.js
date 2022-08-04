@@ -15,14 +15,12 @@ export const searchName = payload => ({type: 'SEARCH', search: payload.search})
 const reducer = (state, payload) => {
   switch(payload.type){
     case 'ADD_COLUMN':
-      
       return {...state, columns:[...state.columns, {title: payload.title, icon: payload.icon, id: shortid()}]}; {/*po co drugie nawiasy {} */}  
-      
     case 'ADD_CARD' :
       console.log(payload)
       return {...state, cards:[...state.cards, {title: payload.title, columnId: payload.columnId}]} 
     case 'SEARCH' :
-      return {...state, search:[...state.cards, {search: payload.search}] }
+      return {...state,  search: payload.search}  //chyba za bardzo nie rozumiem składni
     default:
       return state;
 

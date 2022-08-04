@@ -13,11 +13,8 @@ const SearchForm = () => {
     const searchTitle =e=>{
         e.preventDefault();
         dispatch(searchName({type: 'SEARCH', search}))
-        setSerch('')
-        console.log('ss', search)
-        
+        setSerch('')  
     }
-
 
     return(
         <form className={styles.searchForm} onSubmit={searchTitle}>
