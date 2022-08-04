@@ -1,16 +1,17 @@
 import styles from './Column.module.scss'
 import Card from    '../Card/Card'
 import CardForm from '../CardForm/CardForm'
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'; // za co odpowiadało
 import { getFilteredCards } from '../../redux/store'
 
 const Column = props =>{
 
    
     
-
-    const cards = useSelector(state => getFilteredCards(state, props.id));
-    console.log('column reader')
+    
+    const cards = useSelector(state => getFilteredCards(state, props.id)); //do wytłumaczenia
+    
+    
 
 
     return( 

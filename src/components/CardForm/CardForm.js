@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
 import styles from './CardForm.module.scss';
 import { useDispatch } from 'react-redux';
+import { addCard } from '../../redux/store';
 
 const CardForm = props =>{  
    
@@ -14,9 +15,10 @@ const CardForm = props =>{
 
     const handleSubmmit =e =>{
         e.preventDefault();
-        dispatch({ type: 'ADD_CARD', newCard: {title , columnId}}); 
+        dispatch(addCard({title, columnId})); //czemu nie moge wstawic props.columnId
+        //dispatch({ type: 'ADD_CARD', newCard: {title , columnId}}); 
         setTitle(' ')
-        //dispatch(addCard({title, columnId})); //czemu nie moge wstawic props.columnId
+        
     }
 
     return(
