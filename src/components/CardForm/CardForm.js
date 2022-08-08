@@ -15,8 +15,7 @@ const CardForm = props =>{
 
     const handleSubmmit =e =>{
         e.preventDefault();
-        dispatch(addCard({title, columnId})); //czemu nie moge wstawic props.columnId
-        //dispatch({ type: 'ADD_CARD', newCard: {title , columnId}}); 
+        dispatch(addCard({title, columnId})); //czemu nie moge wstawic props.columnId bo musiałem wpisac columnId: props.columnId
         setTitle(' ')
         
     }

@@ -1,0 +1,32 @@
+@import '../../styles/settings.scss';
+
+
+nav{
+ background-color: darken($color-dark, 3%);
+ flex-direction: row; 
+ font-size: 24px;
+
+    container{
+        display: flex;
+        justify-content: space-between;
+
+        ul{
+            display: flex;
+            flex-direction: row;
+            margin-right: 40px;
+            list-style-type: none;
+            li{
+                padding: 10px;      
+            }
+        }
+    }
+}
+
+a{
+    span{
+        margin-top: 25px;
+        margin-left: 40px;
+        margin-bottom: 0;
+        font-size: 180px; //czemu nie moe tu zminic czcionki
+    }
+}
