@@ -22,18 +22,21 @@ export const addCard = payload => ({type: 'ADD_CARD',title: payload.title, colum
 export const searchName = payload => ({type: 'SEARCH', search: payload.search})
 export const addNewList = payload =>({type: 'ADD_LIST', title: payload.title, description: payload.description, id: payload.id})
 
+export const cardFavorite = payload =>({type: 'TOGGLE_CARD_FAVORITE', id: payload.id})
 
 const reducer = (state, payload) => {
   switch(payload.type){
     case 'ADD_COLUMN':
       return {...state, columns:[...state.columns, {title: payload.title, icon: payload.icon, id: shortid(), listId: payload.listId}]}; 
     case 'ADD_CARD' :
-      console.log(payload)
       return {...state, cards:[...state.cards, {title: payload.title, columnId: payload.columnId}]} 
     case 'SEARCH' :
       return {...state,  search: payload.search}  //chyba za bardzo nie rozumiem składni 
     case 'ADD_LIST' :
       return {...state, lists:[...state.lists,{title: payload.title, description: payload.description, id: shortid()}]}
+    case 'TOGGLE_CARD_FAVORITE' :
+     
+      return { ...state, cards: state.cards.map(card => (card.id === payload.id) ? { ...card, isFavorite: !card.isFavorite } : card) }; // nie rozumiem tego zapisu
     default:
       return state;
 
