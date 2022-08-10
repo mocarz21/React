@@ -1,6 +1,4 @@
 
-import Hero from './components/Hero/Hero'
-import SearchForm from './components/SearchForm/SearchForm'
 import List from './components/List/List';
 import Container from './components/Container/Container';
 import NavBar from './components/NavBar/NavBar';
@@ -22,6 +20,7 @@ const App = () => {
             <main style={{padding:"1rem"}}>
                 <p>Tu nic niema</p>
             </main>}/>
+          <Route path= "/list/:listId" element={<List/>} />
         </Routes>  
       </Container>
     </main>

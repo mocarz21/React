@@ -12,7 +12,7 @@ const SearchForm = () => {
     
     const searchTitle =e=>{
         e.preventDefault();
-        dispatch(searchName({type: 'SEARCH', search}))
+        dispatch(searchName({type: 'SEARCH', search})) //skad wiadomo ze on ma szukac tej wartosci z search gdzie to jest
         setSerch('')  
     }
 

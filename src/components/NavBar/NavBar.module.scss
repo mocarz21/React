@@ -23,10 +23,15 @@ nav{
 }
 
 a{
+    text-decoration: none;
+    color: white;
     span{
         margin-top: 25px;
         margin-left: 40px;
         margin-bottom: 0;
         font-size: 180px; //czemu nie moe tu zminic czcionki
     }
+}
+.linkActive{
+    color: $color-warning;
 }
