@@ -36,7 +36,7 @@ const reducer = (state, payload) => {
       return {...state, lists:[...state.lists,{title: payload.title, description: payload.description, id: shortid()}]}
     case 'TOGGLE_CARD_FAVORITE' :
      
-      return { ...state, cards: state.cards.map(card => (card.id === payload.id) ? { ...card, isFavorite: !card.isFavorite } : card) }; // nie rozumiem tego zapisu
+      return { ...state, cards: state.cards.map(card => (card.id === payload.id) ? { ...card, isFavorite: !card.isFavorite, id: shortid()} : card) }; // nie rozumiem tego zapisu
     default:
       return state;
 
