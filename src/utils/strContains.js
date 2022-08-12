@@ -2,6 +2,8 @@
 
 
 const strContains =(one, two)=>{  
+    console.log(one,two)
+    
     if(one.toLowerCase().includes(two.toLowerCase()))
         return(
             true
