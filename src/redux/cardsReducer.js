@@ -13,20 +13,11 @@ const cardsReducer = (statePart = [], action) => {
         return [...statePart, { ...action, id: shortid() }];
       case 'TOGGLE_CARD_FAVORITE':
         return statePart.map(card => (card.id === action.id) ? { ...card, isFavorite: !card.isFavorite, id: shortid()} : card);
+      case 'app/cards/RREMOVE':
+        return statePart.filter(card =>(card.id !== action.id))  
       default:
         return statePart;
     }
   }
 
-  export const removeReducer = (statePart = [], action) =>{
-    
-    switch(action.type){
-      case 'app/cards/RREMOVE':
-        return[statePart.filtred(action.id) !== action.id]
-        default:
-          return statePart
-    }
-    
-  }
-  
   export default cardsReducer;
